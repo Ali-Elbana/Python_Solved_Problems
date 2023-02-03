@@ -19,9 +19,11 @@ names_flag = False
 
 # Is a flag to detect the right password index in the database:
 pass_flag  = False 
- 
+
+# Is a counter for the number of tries of the incorrect entered names:
 name_tries : int = 0
 
+# Is a counter for the number of tries of the incorrect entered passwords:
 pass_tries : int = 0
 
 # Get the username from the user:
@@ -42,12 +44,12 @@ for names in users_database :
         
         break
   
-# After you finished the searching process if the input username not found, then its an incorrect username:  
+# Give the user 3 more tries to enter the right name:
 if  names_flag == False :
     
-    print( 'Incorrect Username, please try again\n' ) 
-    
     while (name_tries < 2) and (names_flag == False) :
+        
+        print( 'Incorrect Username, please try again\n' ) 
         
         name_tries += 1
         
@@ -69,7 +71,7 @@ if  names_flag == False :
                 
                 break
     
-        
+# After you finished the searching process if the input username not found, then its an incorrect username: 
 if  names_flag == False :
     
     print( 'Incorrect Username, no more tries' )     
@@ -96,7 +98,7 @@ if  names_flag != False :
             
             break
             
-    # After you finished the searching process if the input password not found, then its an incorrect password:  
+    # Give the user 3 more tries to enter the right password: 
     if  pass_flag == False :
         
         while (pass_tries < 2) and (pass_flag == False) :
@@ -123,7 +125,7 @@ if  names_flag != False :
                     
                     break
                 
-                
+    # After you finished the searching process if the input password not found, then its an incorrect password:            
     if  pass_flag == False :
     
         print( 'Incorrect Password, no more tries' )     
