@@ -339,6 +339,8 @@ def client_mode():
     
     print_receipt()
     
+    clear_receipt()
+    
 """ -------------------------------------------------------------------------------- """
 
 def get_order() :
@@ -435,4 +437,18 @@ def print_receipt():
          
 """ -------------------------------------------------------------------------------- """
            
+def clear_receipt() :
+    
+    with open( "receipt.csv", "w", newline='' ) as receipt :
+       
+       receipt.truncate()
 
+       fieldnames = [ 'Item', 'Quantity', 'Price' ]
+            
+       writer = csv.DictWriter( receipt, fieldnames=fieldnames )
+            
+       writer.writeheader()
+             
+        
+""" -------------------------------------------------------------------------------- """
+  
