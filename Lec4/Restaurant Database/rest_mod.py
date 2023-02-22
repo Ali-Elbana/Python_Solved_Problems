@@ -348,9 +348,6 @@ def get_order() :
     global menu_ls
     global order_ls
 
-    found_flag          = False
-    underQuantity_flag  = False
-    
     add_again : str = None
     
     while( add_again != 'N' and add_again != 'n' ) :
@@ -362,6 +359,9 @@ def get_order() :
         
         for menu in menu_ls :
 
+            found_flag          = False
+            underQuantity_flag  = False
+    
             if order_ls["Item"] in menu["Item"] :
             
                 found_flag = True
